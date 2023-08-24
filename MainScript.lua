@@ -2,7 +2,7 @@ repeat task.wait() until game:IsLoaded()
 local GuiLibrary
 local baseDirectory = (shared.VapePrivate and "vapeprivate/" or "vape/")
 local vapeInjected = true
-local oldRainbow = false
+local oldRainbow = true
 local errorPopupShown = false
 local redownloadedAssets = false
 local profilesLoaded = false
@@ -14,6 +14,8 @@ local inputService = game:GetService("UserInputService")
 local isfile = isfile or function(file)
 	local suc, res = pcall(function() return readfile(file) end)
 	return suc and res ~= nil
+end
+shared.VapePrivate = true
 end
 local setidentity = syn and syn.set_thread_identity or set_thread_identity or setidentity or setthreadidentity or function() end
 local getidentity = syn and syn.get_thread_identity or get_thread_identity or getidentity or getthreadidentity or function() return 0 end
